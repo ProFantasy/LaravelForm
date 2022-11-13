@@ -16,4 +16,10 @@ class PostController extends Controller
         $post->save();
         return redirect('add-blog-post-form')->with('status', 'Blog Post Form Data Has Been inserted');
     }
+    public function baca()
+    {
+        $model = new Post;
+        $data = $model -> all();
+        return view('baca', ['data' => $data]);
+    }
 }
